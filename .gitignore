@@ -3,4 +3,6 @@
 Homestead.yaml
 .env
 
+/public/assets
+/public/build
 composer.phar
