@@ -42,7 +42,10 @@ class Handler extends ExceptionHandler
         if ($this->isHttpException($e)) {
             switch ($e->getStatusCode()) {
                 case 404:
-                    return redirect()->route('home.index');
+                    $controller    = app()->make('App\Http\Controllers\HomeController');
+                    $actionContent = $controller->callAction('index', []);
+
+                    return response()->make($actionContent, 200);
             }
         }
 
