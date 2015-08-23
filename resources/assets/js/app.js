@@ -2,11 +2,6 @@ var Vue = require('vue'),
     VueRouter = require('vue-router');
 
 //
-var DummyComponent = Vue.extend({
-    template: '<p>This is Test! {{ $route.params.category }}</p>'
-});
-
-//
 Vue.use(VueRouter);
 
 var Router = new VueRouter({
@@ -16,23 +11,22 @@ var Router = new VueRouter({
 
 Router.map({
     '/': {
-        component: DummyComponent
+        component: require('./components/home')
     },
 
     '/inform': {
-        component: DummyComponent
+        component: require('./components/inform')
     },
 
     '/c/:category': {
-        component: DummyComponent
+        component: require('./components/category')
+    },
+
+    '*': {
+        component: require('./components/not-found')
     }
 })
 
-var App = Vue.extend({
-    template: require('./template/index.html'),
-    ready   : function() {
-        $(".button-collapse").sideNav();
-    }
-});
+var App = Vue.extend(require('./components/layout'));
 
 Router.start(App, '#app');
