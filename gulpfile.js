@@ -49,7 +49,9 @@ Elixir.extend('webpack', function(options) {
 
         return deferred.promise;
     })
-    .watch(config.get('assets.js.folder') + '/**/*.js');
+    .watch(config.get('assets.js.folder') + '/**/*.js')
+    .watch(config.get('assets.js.folder') + '/**/*.scss')
+    .watch(config.get('assets.js.folder') + '/**/*.html');
 });
 
 
