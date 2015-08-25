@@ -4,6 +4,9 @@ all:
 composer:
 	@curl -sS https://getcomposer.org/installer | php
 
+vendor:
+	@php composer.phar install
+
 npm:
 	@npm install gulp
 	@npm install
