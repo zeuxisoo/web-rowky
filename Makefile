@@ -5,7 +5,6 @@ composer:
 	@curl -sS https://getcomposer.org/installer | php
 
 npm:
-	@npm install gulp
 	@npm install
 
 assets:

@@ -1,0 +1,9 @@
+.container {
+    margin-top: 30px;
+
+    .row {
+        &.full-width {
+            max-width: 95%
+        }
+    }
+}

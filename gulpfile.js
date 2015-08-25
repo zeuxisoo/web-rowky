@@ -5,7 +5,8 @@ var Elixir = require('laravel-elixir'),
     gulp = require('gulp'),
     gutil = require('gulp-util'),
     del = require('del'),
-    Q = require('q');
+    Q = require('q')
+    path = require('path');
 
 var Task = Elixir.Task;
 
@@ -54,7 +55,6 @@ Elixir.extend('webpack', function(options) {
     .watch(config.get('assets.js.folder') + '/**/*.html');
 });
 
-
 Elixir(function(mix) {
     mix
         .clean([
@@ -80,21 +80,28 @@ Elixir(function(mix) {
                     loader: "html"
                 }]
             },
+            resolve: {
+                root: [path.join(__dirname, "bower_components")]
+            },
             plugins: [
                 new ExtractTextPlugin('app.scope.css', {
                     disable: false
                 }),
+                new webpack.ResolverPlugin(
+                    new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
+                ),
                 new WebpackNotifierPlugin(),
-            ]
+            ],
         })
         .scripts([
-            'node_modules/jquery/dist/jquery.min.js',
-            'node_modules/materialize-css/bin/materialize.js',
+            'bower_components/jquery/dist/jquery.js',
+            'bower_components/foundation/js/foundation.js',
             'public/assets/app.js',
         ], 'public/assets/bundle.js', './')
         .sass('app.scss', 'public/assets/app.global.css')
         .styles([
-            'node_modules/materialize-css/bin/materialize.css',
+            'bower_components/foundation/css/normalize.css',
+            'bower_components/foundation/css/foundation.css',
             'public/assets/app.global.css',
             'public/assets/app.scope.css'
         ], 'public/assets/bundle.css', './')
@@ -102,10 +109,6 @@ Elixir(function(mix) {
             'public/assets/bundle.css',
             'public/assets/bundle.js',
         ])
-        .copy(
-            'node_modules/materialize-css/font',
-            'public/build/font'
-        )
         // .clean([
         //     'public/assets',
         // ]);
