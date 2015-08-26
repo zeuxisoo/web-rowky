@@ -1,4 +1,5 @@
-var Elixir = require('laravel-elixir'),
+var Elixir = require('laravel-elixir')
+    liveReload = require('laravel-elixir-livereload'),
     webpack = require('webpack'),
     WebpackNotifierPlugin = require('webpack-notifier'),
     ExtractTextPlugin = require("extract-text-webpack-plugin"),
@@ -111,5 +112,6 @@ Elixir(function(mix) {
         ])
         // .clean([
         //     'public/assets',
-        // ]);
+        // ])
+        .livereload()
 });
