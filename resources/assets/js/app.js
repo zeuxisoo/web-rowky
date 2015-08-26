@@ -27,6 +27,13 @@ Router.map({
     }
 })
 
-var App = Vue.extend(require('./components/layout'));
+Object.defineProperties(Vue.prototype, {
+    $helpers: {
+        get: function() {
+            return require('./helpers');
+        }
+    }
+});
 
-Router.start(App, '#app');
+
+Router.start(Vue.extend(require('./components/layout')), '#app');

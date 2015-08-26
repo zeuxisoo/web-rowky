@@ -97,12 +97,14 @@ Elixir(function(mix) {
         .scripts([
             'bower_components/jquery/dist/jquery.js',
             'bower_components/foundation/js/foundation.js',
+            'bower_components/toastr/toastr.js',
             'public/assets/app.js',
         ], 'public/assets/bundle.js', './')
         .sass('app.scss', 'public/assets/app.global.css')
         .styles([
             'bower_components/foundation/css/normalize.css',
             'bower_components/foundation/css/foundation.css',
+            'bower_components/toastr/toastr.css',
             'public/assets/app.global.css',
             'public/assets/app.scope.css'
         ], 'public/assets/bundle.css', './')

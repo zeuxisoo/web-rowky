@@ -22,8 +22,10 @@ module.exports = {
 
     methods: {
         submit: function(e) {
-            // TODO
-            console.log('This is a test');
+            e.preventDefault();
+
+            this.$helpers.message.success('Infom was created');
+            this.$helpers.message.error('Got some errors');
         }
     }
 }
