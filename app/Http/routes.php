@@ -11,14 +11,14 @@
 |
 */
 
+$api = app('Dingo\Api\Routing\Router');
+
+//
 Route::get('/', ['as' => 'home.index', 'uses' => 'HomeController@index']);
 
-Route::post('api/inform/create', function() {
-    // return response()->json([
-    //     'message' => 'This is a test message'
-    // ]);
-
-    return response()->json([
-        'message' => 'This is a test error reason'
-    ])->setStatusCode(400);
+//
+$api->version('v1', function($api) {
+    $api->group(['namespace' => 'App\Http\Controllers\Api\Version1', 'prefix' => 'inform'], function ($api) {
+        $api->post('create', ['as' => 'api.inform.create', 'uses' => 'InformController@create']);
+    });
 });
