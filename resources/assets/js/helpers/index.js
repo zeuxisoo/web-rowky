@@ -1,3 +1,4 @@
 module.exports = {
-    message: require('./message.js')
+    message: require('./message.js'),
+    api    : require('./api.js')
 }
