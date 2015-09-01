@@ -5,6 +5,7 @@ module.exports = {
 
     data: function() {
         return {
+            error : false,
             inform: {
                 jobTitle    : '',
                 category    : 0,
@@ -21,6 +22,18 @@ module.exports = {
     },
 
     methods: {
+        shakeError: function(reason) {
+            for(var k in reason) {
+                this.$helpers.message.error(reason[k]);
+                break;
+            }
+
+            this.error = true;
+            setTimeout(function() {
+              this.error = false;
+            }.bind(this), 1000);
+        },
+
         submit: function(e) {
             e.preventDefault();
 
@@ -38,10 +51,8 @@ module.exports = {
             }
 
             this.$api.inform.create(data, function(response) {
-                console.log(response);
-            }).error(function(reason) {
-                console.log(reason);
-            });
+                this.$helpers.message.success(response.message);
+            }).error(this.shakeError);
         }
     }
 }

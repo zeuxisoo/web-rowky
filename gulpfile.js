@@ -105,6 +105,7 @@ Elixir(function(mix) {
             'bower_components/foundation/css/normalize.css',
             'bower_components/foundation/css/foundation.css',
             'bower_components/toastr/toastr.css',
+            'bower_components/animate.css/animate.css',
             'public/assets/app.global.css',
             'public/assets/app.scope.css'
         ], 'public/assets/bundle.css', './')
