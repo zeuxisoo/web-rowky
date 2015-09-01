@@ -15,7 +15,7 @@ class InformRequest extends Request {
             'jobTitle'     => 'required',
             'category'     => 'required|integer|min:1|max:3',
             'salaryMin'    => 'required|integer|min:1',
-            'salaryMax'    => 'required|integer|max:999999',
+            'salaryMax'    => 'required|integer|greater_than:salaryMin|max:999999',
             'location'     => 'required',
             'description'  => 'required',
             'howToApply'   => 'required',
@@ -27,10 +27,11 @@ class InformRequest extends Request {
 
     public function messages() {
         return [
-            'category.required' => 'The category must be selected',
-            'category.integer'  => 'The category must be selected',
-            'category.min'      => 'The category must be selected',
-            'category.max'      => 'The category must be selected'
+            'category.required'      => 'The category must be selected',
+            'category.integer'       => 'The category must be selected',
+            'category.min'           => 'The category must be selected',
+            'category.max'           => 'The category must be selected',
+            'salaryMax.greater_than' => 'The max salary must greater than min salary',
         ];
     }
 
