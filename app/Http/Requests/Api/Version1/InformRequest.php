@@ -2,9 +2,9 @@
 namespace App\Http\Requests\Api\Version1;
 
 use Illuminate\Contracts\Validation\Validator;
-use App\Http\Requests\Request;
+use App\Http\Requests\Api\ApiRequest;
 
-class InformRequest extends Request {
+class InformRequest extends ApiRequest {
 
     public function authorize() {
         return true;
@@ -32,6 +32,7 @@ class InformRequest extends Request {
             'category.min'           => 'The category must be selected',
             'category.max'           => 'The category must be selected',
             'salaryMax.greater_than' => 'The max salary must greater than min salary',
+            'websiteURL.url'         => 'The website url format is invalid.',
         ];
     }
 

@@ -23,8 +23,9 @@ module.exports = {
 
     methods: {
         shakeError: function(reason) {
-            for(var k in reason) {
-                this.$helpers.message.error(reason[k]);
+            var errors = reason.errors;
+            for(var key in errors) {
+                this.$helpers.message.error(errors[key][0]);
                 break;
             }
 
