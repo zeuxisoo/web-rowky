@@ -39,16 +39,16 @@ module.exports = {
             e.preventDefault();
 
             var data = {
-                jobTitle    : this.inform.jobTitle,
-                category    : this.inform.category,
-                salaryMin   : this.inform.salaryMin,
-                salaryMax   : this.inform.salaryMax,
-                location    : this.inform.location,
-                description : this.inform.description,
-                howToApply  : this.inform.howToApply,
-                companyName : this.inform.companyName,
-                websiteURL  : this.inform.websiteURL,
-                contactEmail: this.inform.contactEmail,
+                job_title     : this.inform.jobTitle,
+                category      : this.inform.category,
+                min_salary    : this.inform.salaryMin,
+                max_salary    : this.inform.salaryMax,
+                location      : this.inform.location,
+                description   : this.inform.description,
+                how_to_apply  : this.inform.howToApply,
+                company_name  : this.inform.companyName,
+                website_url   : this.inform.websiteURL,
+                contact_email : this.inform.contactEmail,
             }
 
             this.$api.inform.create(data, function(response) {
