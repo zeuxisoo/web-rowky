@@ -18,3 +18,9 @@ watch:
 
 server:
 	@php artisan serve
+
+sqlite:
+	touch storage/database.sqlite
+
+migrate: sqlite
+	php artisan artisan

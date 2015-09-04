@@ -6,4 +6,5 @@ Homestead.yaml
 /public/assets
 /public/build
 /bower_components
+/storage/database.sqlite
 composer.phar

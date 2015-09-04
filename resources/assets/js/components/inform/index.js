@@ -52,7 +52,12 @@ module.exports = {
             }
 
             this.$api.inform.create(data, function(response) {
-                this.$helpers.message.success(response.message);
+                var inform = response.data;
+                if (inform && inform.job_title) {
+                    $("button[type=reset]").trigger('click');
+
+                    this.$helpers.message.success('Inform Created');
+                }
             }).error(this.shakeError);
         }
     }
