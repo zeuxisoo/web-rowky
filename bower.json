@@ -6,6 +6,7 @@
     "animate.css": "~3.4.0",
     "foundation": "~5.5.2",
     "jquery": "~2.1.4",
+    "responsive-tables": "git://github.com/zurb/responsive-tables",
     "toastr": "~2.1.2",
     "vue": "~0.12.11",
     "vue-resource": "~0.1.14",

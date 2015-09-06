@@ -1,1 +1,52 @@
-<p>This is Home!</p>
+<div class="panel">
+    <h3>Job Filter</h3>
+    <div class="row">
+        <div class="large-12 columns">
+            <label>
+                <span for="job-title">Category</span>
+                <select class="browser-default" v-model="filter.category">
+                    <option value="0" selected="selected">All</option>
+                    <option value="1">Design</option>
+                    <option value="2">Program</option>
+                    <option value="3">Marketing</option>
+                </select>
+            </label>
+        </div>
+    </div>
+</div>
+
+<div class="panel">
+    <h3>Job List</h3>
+    <div class="row">
+        <div class="large-12 columns">
+            <table width="100%" class="responsive">
+                <thead>
+                    <tr>
+                        <th width="45%">Company Name</th>
+                        <th width="25%">Job Title</th>
+                        <th width="15%">Salary</th>
+                        <th width="15%">Post At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>This is a company name</td>
+                        <td>The job title</td>
+                        <td>HKD $20,000</td>
+                        <td>11 hours ago</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="large-6 columns">
+        <button class="button left disabled">Previous</button>
+    </div>
+    <div class="large-6 columns ">
+        <button class="button right">Next</button>
+    </div>
+</div>
+
