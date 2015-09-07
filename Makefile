@@ -24,3 +24,7 @@ sqlite:
 
 migrate: sqlite
 	php artisan migrate
+	php artisan db:seed --class=CategoryTableSeeder
+
+migrate-refresh:
+	php artisan migrate:refresh --seeder=CategoryTableSeeder
