@@ -23,4 +23,4 @@ sqlite:
 	touch storage/database.sqlite
 
 migrate: sqlite
-	php artisan artisan
+	php artisan migrate
