@@ -1,10 +1,10 @@
 <?php
-namespace App\Repositories\Version1;
+namespace App\Api\Version1\Repositories;
 
-use App\Repositories\BaseRepository;
+use App\Api\Version1\Bases\ApiRepository;
 use App\Models\Category;
 
-class CategoryRepository extends BaseRepository {
+class CategoryRepository extends ApiRepository {
 
     public function __construct(Category $category) {
         $this->category = $category;

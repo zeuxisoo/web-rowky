@@ -1,5 +1,5 @@
 <?php
-namespace App\Extensions;
+namespace App\Api\Version1\Extensions;
 
 use Illuminate\Validation\Validator;
 use Illuminate\Support\Facades\Input;

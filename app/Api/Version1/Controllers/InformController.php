@@ -1,10 +1,10 @@
 <?php
-namespace App\Http\Controllers\Api\Version1;
+namespace App\Api\Version1\Controllers;
 
-use App\Http\Controllers\Api\ApiController;
-use App\Http\Requests\Api\Version1\InformRequest;
-use App\Repositories\Version1\InformRepository;
-use App\Transformers\Version1\InformTransformer;
+use App\Api\Version1\Bases\ApiController;
+use App\Api\Version1\Requests\InformRequest;
+use App\Api\Version1\Repositories\InformRepository;
+use App\Api\Version1\Transformers\InformTransformer;
 
 class InformController extends ApiController {
 

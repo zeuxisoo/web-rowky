@@ -1,8 +1,8 @@
 <?php
-namespace App\Http\Requests\Api\Version1;
+namespace App\Api\Version1\Requests;
 
 use Illuminate\Contracts\Validation\Validator;
-use App\Http\Requests\Api\ApiRequest;
+use App\Api\Version1\Bases\ApiRequest;
 
 class InformRequest extends ApiRequest {
 

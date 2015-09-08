@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Extensions\ValidatorExtension;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,9 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app['validator']->resolver(function ($translator, $data, $rules, $messages) {
-            return new ValidatorExtension($translator, $data, $rules, $messages);
-        });
+        //
     }
 
     /**

@@ -1,5 +1,5 @@
 <?php
-namespace App\Transformers\Version1;
+namespace App\Api\Version1\Transformers;
 
 use League\Fractal\TransformerAbstract;
 use App\Models\Inform;

@@ -1,9 +1,9 @@
 <?php
-namespace App\Http\Controllers\Api\Version1;
+namespace App\Api\Version1\Controllers;
 
-use App\Http\Controllers\Api\ApiController;
-use App\Repositories\Version1\CategoryRepository;
-use App\Transformers\Version1\CategoryTransformer;
+use App\Api\Version1\Bases\ApiController;
+use App\Api\Version1\Repositories\CategoryRepository;
+use App\Api\Version1\Transformers\CategoryTransformer;
 
 class CategoryController extends ApiController {
 

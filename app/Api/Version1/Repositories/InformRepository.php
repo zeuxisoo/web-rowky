@@ -1,10 +1,10 @@
 <?php
-namespace App\Repositories\Version1;
+namespace App\Api\Version1\Repositories;
 
-use App\Repositories\BaseRepository;
+use App\Api\Version1\Bases\ApiRepository;
 use App\Models\Inform;
 
-class InformRepository extends BaseRepository {
+class InformRepository extends ApiRepository {
 
     public function __construct(Inform $inform) {
         $this->inform = $inform;

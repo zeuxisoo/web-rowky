@@ -147,6 +147,8 @@ return [
         //
         Dingo\Api\Provider\LaravelServiceProvider::class,
 
+        //
+        App\Api\Version1\Providers\ValidatorServiceProvider::class,
     ],
 
     /*
