@@ -4,12 +4,7 @@
         <div class="large-12 columns">
             <label>
                 <span for="job-title">Category</span>
-                <select class="browser-default" v-model="filter.category">
-                    <option value="0" selected="selected">All</option>
-                    <option value="1">Design</option>
-                    <option value="2">Program</option>
-                    <option value="3">Marketing</option>
-                </select>
+                <select-filter-categories></select-filter-categories>
             </label>
         </div>
     </div>

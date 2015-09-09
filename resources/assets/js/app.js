@@ -14,26 +14,26 @@ var Router = new VueRouter({
 
 Router.map({
     '/': {
-        component: require('./components/home')
+        component: require('./views/home')
     },
 
     '/inform': {
-        component: require('./components/inform')
+        component: require('./views/inform')
     },
 
     '/c/:category': {
-        component: require('./components/category')
+        component: require('./views/category')
     },
 
     '*': {
-        component: require('./components/not-found')
+        component: require('./views/not-found')
     }
 });
 
 // Resource
 Vue.http.headers.common['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').prop('content');
 
-//
+// Plugin
 Object.defineProperties(Vue.prototype, {
     $helpers: {
         get: function() {
@@ -47,5 +47,11 @@ Object.defineProperties(Vue.prototype, {
     }
 });
 
+// Filter
+var filters = require('./filters');
 
-Router.start(Vue.extend(require('./components/layout')), '#app');
+for(var filter in filters) {
+    Vue.filter(filter, filters[filter]);
+}
+
+Router.start(Vue.extend(require('./views/layout')), '#app');
