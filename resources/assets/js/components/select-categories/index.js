@@ -9,6 +9,10 @@ module.exports = {
         disabledValue: {
             type    : String,
             required: false
+        },
+        onChangeCallback: {
+            type    : Function,
+            required: false
         }
     },
 
@@ -23,5 +27,11 @@ module.exports = {
         this.$api.category.all({}, function(response) {
             this.categories = response.data;
         });
+    },
+
+    methods: {
+        onChange: function(e) {
+            this.onChangeCallback(this.category);
+        }
     }
 };

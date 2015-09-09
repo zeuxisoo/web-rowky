@@ -8,6 +8,7 @@ module.exports = {
             error : false,
             inform: {
                 jobTitle    : '',
+                category    : 0,
                 salaryMin   : 0,
                 salaryMax   : 0,
                 location    : '',
@@ -39,7 +40,7 @@ module.exports = {
 
             var data = {
                 job_title     : this.inform.jobTitle,
-                category      : this.$.informCategories.category,
+                category      : this.inform.category,
                 min_salary    : this.inform.salaryMin,
                 max_salary    : this.inform.salaryMax,
                 location      : this.inform.location,
@@ -58,6 +59,10 @@ module.exports = {
                     this.$helpers.message.success('Inform Created');
                 }
             }).error(this.shakeError);
+        },
+
+        onChangeCategory: function(value) {
+            this.inform.category = value;
         }
     },
 

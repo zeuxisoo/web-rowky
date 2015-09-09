@@ -15,7 +15,7 @@
             <div class="large-12 columns">
                 <label>
                     <span for="job-title">Category</span>
-                    <select-categories v-ref="informCategories" default-text="Choose your option" disabled-value="disabled"></select-categories>
+                    <select-categories on-change-callback="{{ onChangeCategory }}" default-text="Choose your option" disabled-value="disabled"></select-categories>
                 </label>
             </div>
         </div>
