@@ -6,6 +6,11 @@ module.exports = {
             type    : String,
             required: true
         },
+        defaultValue : {
+            type    : Number,
+            required: false,
+            default : 0
+        },
         disabledValue: {
             type    : String,
             required: false
@@ -26,6 +31,7 @@ module.exports = {
     compiled: function() {
         this.$api.category.all({}, function(response) {
             this.categories = response.data;
+            this.category   = this.defaultValue;
         });
     },
 
