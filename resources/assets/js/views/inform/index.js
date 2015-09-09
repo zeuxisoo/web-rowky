@@ -1,5 +1,3 @@
-var selectInformCategories = require('../../components/select-inform-categories');
-
 require('./style.scss');
 
 module.exports = {
@@ -64,6 +62,6 @@ module.exports = {
     },
 
     components: {
-        'select-inform-categories': selectInformCategories
+        'select-categories': require('../../components/select-categories')
     }
 }

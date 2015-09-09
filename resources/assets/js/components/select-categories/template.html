@@ -1,3 +1,3 @@
 <select class="browser-default" v-model="category" options="categories | categoriesOptions" required>
-    <option value="0" disabled>Choose your option</option>
+    <option value="0" v-attr="disabled: disabledValue">{{ defaultText }}</option>
 </select>

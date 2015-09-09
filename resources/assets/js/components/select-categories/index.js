@@ -1,6 +1,17 @@
 module.exports = {
     template: require('./template.html'),
 
+    props: {
+        defaultText: {
+            type    : String,
+            required: true
+        },
+        disabledValue: {
+            type    : String,
+            required: false
+        }
+    },
+
     data: function() {
         return {
             category: 0,
