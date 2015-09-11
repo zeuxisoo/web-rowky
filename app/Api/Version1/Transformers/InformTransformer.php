@@ -18,6 +18,7 @@ class InformTransformer extends TransformerAbstract {
             'company_name'  => $inform->company_name,
             'website_url'   => $inform->website_url,
             'contact_email' => $inform->contact_email,
+            'created_at'    => $inform->created_at->diffForHumans(),
         ];
     }
 

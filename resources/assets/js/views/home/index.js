@@ -1,12 +1,20 @@
 module.exports = {
     template: require('./template.html'),
 
+    data: function() {
+        return {
+            informs: []
+        }
+    },
+
     compiled: function() {
         this.$api.inform.all({
             page: 1
         }, function(response) {
-            // TODO: Show in home page
-            console.log(response);
+            var informs    = response.data,
+                pagination = response.meta.pagination;
+
+            this.informs = informs;
         });
     },
 

@@ -23,12 +23,11 @@
                         <th width="15%">Post At</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>This is a company name</td>
-                        <td>The job title</td>
-                        <td>HKD $20,000</td>
-                        <td>11 hours ago</td>
+                <tbody v-repeat="informs">
+                        <td>{{ company_name }}</td>
+                        <td>{{ job_title }}</td>
+                        <td>{{ min_salary }} ~ {{ max_salary }}</td>
+                        <td>{{ created_at }}</td>
                     </tr>
                 </tbody>
             </table>
