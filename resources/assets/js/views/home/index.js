@@ -4,58 +4,70 @@ module.exports = {
     data: function() {
         return {
             informs    : [],
-            pagination : {}
+            pagination : {
+                count: 0,
+                current_page: 0,
+                links: {
+                    previous: "",
+                    next    : ""
+                },
+                previous: "",
+                per_page: 0,
+                total: 0,
+                total_pages: 0
+            }
         }
     },
 
-    compiled: function() {
-        this.$api.inform.all({
-            page: 1
-        }, function(response) {
-            var informs    = response.data,
-                pagination = response.meta.pagination;
+    route: {
+        data: function(transition) {
+            var page_no = typeof this.$route.query.page === "undefined" ? 1 : this.$route.query.page;
 
-            this.informs = informs;
-            this.pagination = pagination;
-        });
+            this.$api.inform.all({
+                page: page_no
+            }, function(response) {
+                var informs    = response.data,
+                    pagination = response.meta.pagination;
+
+                this.informs = informs;
+                this.pagination = pagination;
+            });
+        }
     },
 
     computed: {
+        previousPageNo: function() {
+            var page_no = this.pagination.current_page - 1;
+
+            if (page_no === 0) {
+                page_no = 1;
+            }
+
+            return page_no;
+        },
+
+        nextPageNo: function() {
+            var page_no = this.pagination.current_page + 1;
+
+            if (page_no > this.pagination.total_pages) {
+                page_no = this.pagination.total_pages;
+            }
+
+            return page_no;
+        },
+
         hasPreviousPage: function() {
             return this.pagination.current_page - 1 > 0;
         },
 
         hasNextPage: function() {
             return this.pagination.current_page + 1 <= this.pagination.total_pages;
-        },
+        }
     },
 
     methods: {
         onChangeCategory: function(value) {
             console.log(value);
-        },
-
-        switchPage: function(action) {
-            var page_no = 0;
-
-            switch(action) {
-                case 'previous':
-                    page_no = this.pagination.current_page - 1;
-                    break;
-                case 'next':
-                    page_no = this.pagination.current_page + 1;
-                    break;
-            }
-
-            this.$api.inform.all({
-                page: page_no
-            }, function(response) {
-                var informs    = response.data,
-                pagination = response.meta.pagination;
-
-                this.informs = informs;
-                this.pagination = pagination;
-            });
         }
     },
 
