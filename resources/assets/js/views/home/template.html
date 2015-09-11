@@ -37,10 +37,10 @@
 
 <div class="row">
     <div class="large-6 columns">
-        <button class="button left disabled">Previous</button>
+        <button class="button left" v-class="disabled: !hasPreviousPage" v-on="click: switchPage('previous')">Previous</button>
     </div>
     <div class="large-6 columns ">
-        <button class="button right">Next</button>
+        <button class="button right" v-class="disabled: !hasNextPage" v-on="click: switchPage('next')">Next</button>
     </div>
 </div>
 
