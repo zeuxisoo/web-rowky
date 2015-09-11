@@ -14,4 +14,8 @@ class InformRepository extends ApiRepository {
         return (new $this->inform)->create($input);
     }
 
+    public function all() {
+        return $this->inform->paginate(1);
+    }
+
 }

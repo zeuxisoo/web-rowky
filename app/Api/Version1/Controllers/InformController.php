@@ -21,6 +21,10 @@ class InformController extends ApiController {
         return $this->response->item($inform, new InformTransformer);
     }
 
+    public function all() {
+        $informs = $this->informRepository->all();
 
+        return $this->response->paginator($informs, new InformTransformer);
+    }
 
 }
