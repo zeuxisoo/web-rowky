@@ -18,11 +18,15 @@ Router.map({
     },
 
     '/inform': {
-        component: require('./views/inform')
+        component: require('./views/inform/create')
     },
 
     '/c/:category': {
         component: require('./views/category')
+    },
+
+    '/i/:id': {
+        component: require('./views/inform/show')
     },
 
     '*': {

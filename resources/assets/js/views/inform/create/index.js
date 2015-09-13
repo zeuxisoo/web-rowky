@@ -1,5 +1,3 @@
-require('./style.scss');
-
 module.exports = {
     template: require('./template.html'),
 
@@ -67,6 +65,6 @@ module.exports = {
     },
 
     components: {
-        'select-categories': require('../../components/select-categories')
+        'select-categories': require('../../../components/select-categories')
     }
 }

@@ -18,6 +18,14 @@ InformApi.prototype.all = function(data, success) {
     );
 };
 
+InformApi.prototype.show = function(data, success) {
+    return this.app.$http.get(
+        this.app.$helpers.api.url('/inform/show/:id'),
+        data,
+        success
+    );
+};
+
 module.exports = function(app) {
     return new InformApi(app);
 };

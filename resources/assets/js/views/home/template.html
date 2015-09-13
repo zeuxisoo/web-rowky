@@ -17,10 +17,11 @@
             <table width="100%" class="responsive">
                 <thead>
                     <tr>
-                        <th width="45%">Company Name</th>
+                        <th width="40%">Company Name</th>
                         <th width="25%">Job Title</th>
                         <th width="15%">Salary</th>
                         <th width="15%">Post At</th>
+                        <th width="5%">Action</th>
                     </tr>
                 </thead>
                 <tbody v-repeat="informs">
@@ -28,6 +29,9 @@
                         <td>{{ job_title }}</td>
                         <td>{{ min_salary }} ~ {{ max_salary }}</td>
                         <td>{{ created_at }}</td>
+                        <th width="5%">
+                            <a v-link="/i/{{ id }}">Look</a>
+                        </th>
                     </tr>
                 </tbody>
             </table>

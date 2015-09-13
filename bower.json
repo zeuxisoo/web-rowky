@@ -4,9 +4,11 @@
   "devDependencies": {},
   "dependencies": {
     "animate.css": "~3.4.0",
+    "font-awesome": "~4.4.0",
     "foundation": "~5.5.2",
+    "github-markdown-css": "~2.0.10",
     "jquery": "~2.1.4",
-    "responsive-tables": "git://github.com/zurb/responsive-tables",
+    "marked": "~0.3.5",
     "toastr": "~2.1.2",
     "vue": "~0.12.11",
     "vue-resource": "~0.1.14",
