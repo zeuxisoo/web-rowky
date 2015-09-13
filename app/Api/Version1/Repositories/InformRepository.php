@@ -18,4 +18,8 @@ class InformRepository extends ApiRepository {
         return $this->inform->paginate(1);
     }
 
+    public function find($id) {
+        return $this->inform->find($id);
+    }
+
 }

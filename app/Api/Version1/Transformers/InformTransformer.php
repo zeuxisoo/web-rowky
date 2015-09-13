@@ -8,6 +8,7 @@ class InformTransformer extends TransformerAbstract {
 
     public function transform(Inform $inform) {
         return [
+            'id'            => $inform->id,
             'job_title'     => $inform->job_title,
             'category'      => $inform->category,
             'min_salary'    => $inform->min_salary,

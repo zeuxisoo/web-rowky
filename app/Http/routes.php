@@ -19,8 +19,9 @@ Route::get('/', ['as' => 'home.index', 'uses' => 'HomeController@index']);
 //
 $api->version('v1', function($api) {
     $api->group(['namespace' => 'App\Api\Version1\Controllers', 'prefix' => 'inform'], function ($api) {
-        $api->post('create', ['as' => 'api.inform.create', 'uses' => 'InformController@create']);
-        $api->post('all',    ['as' => 'api.inform.all',    'uses' => 'InformController@all']);
+        $api->post('create',   ['as' => 'api.inform.create', 'uses' => 'InformController@create']);
+        $api->post('all',      ['as' => 'api.inform.all',    'uses' => 'InformController@all']);
+        $api->get('show/{id}', ['as' => 'api.inform.show',   'uses' => 'InformController@show']);
     });
 
     $api->group(['namespace' => 'App\Api\Version1\Controllers', 'prefix' => 'category'], function ($api) {
