@@ -2,10 +2,9 @@
     <h3>Job Filter</h3>
     <div class="row">
         <div class="large-12 columns">
-            <label>
-                <span for="job-title">Category</span>
-                <select-categories on-change-callback="{{ onChangeCategory }}" default-text="All"></select-categories>
-            </label>
+            <a v-repeat="categories" v-link="/c/{{ slug }}" class="filter">
+                <span class="label">{{ name }}</span>
+            </a>
         </div>
     </div>
 </div>

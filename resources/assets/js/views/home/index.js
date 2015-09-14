@@ -3,6 +3,7 @@ module.exports = {
 
     data: function() {
         return {
+            categories : [],
             informs    : [],
             pagination : {
                 count: 0,
@@ -33,6 +34,12 @@ module.exports = {
                 this.pagination = pagination;
             });
         }
+    },
+
+    compiled: function() {
+        this.$api.category.all({}, function(response) {
+            this.categories = response.data;
+        });
     },
 
     computed: {
@@ -67,7 +74,7 @@ module.exports = {
 
     methods: {
         onChangeCategory: function(value) {
-            console.log(value);
+            this.$route.router.go('/c/' + value);
         }
     },
 
