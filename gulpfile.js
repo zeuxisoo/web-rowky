@@ -96,6 +96,7 @@ Elixir(function(mix) {
         })
         .scripts([
             'bower_components/jquery/dist/jquery.js',
+            'bower_components/modernizr/modernizr.js',
             'bower_components/foundation/js/foundation.js',
             'bower_components/marked/lib/marked.js',
             'bower_components/toastr/toastr.js',

@@ -18,9 +18,9 @@
                 <li class="has-dropdown">
                     <a href="javascript:void(0)">Category</a>
                     <ul class="dropdown">
-                        <li><a v-link="/c/design">Design</a></li>
-                        <li><a v-link="/c/program">Program</a></li>
-                        <li><a v-link="/c/marketing">Market</a></li>
+                        <li v-repeat="categories">
+                            <a v-link="/c/{{ slug }}">{{ name }}</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
