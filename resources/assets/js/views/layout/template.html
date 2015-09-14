@@ -15,18 +15,17 @@
                 <li>
                     <a v-link="/inform">Inform</a>
                 </li>
-                <li class="has-dropdown">
-                    <a href="javascript:void(0)">Category</a>
-                    <ul class="dropdown">
-                        <li v-repeat="categories">
-                            <a v-link="/c/{{ slug }}">{{ name }}</a>
-                        </li>
-                    </ul>
-                </li>
             </ul>
 
             <ul class="right">
-                <li><a v-link="#">About</a></li>
+                <li class="has-dropdown">
+                    <a href="javascript:void(0)">About</a>
+                    <ul class="dropdown">
+                        <li>
+                            <a href="http://www.not.im">Website</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </section>
     </nav>
