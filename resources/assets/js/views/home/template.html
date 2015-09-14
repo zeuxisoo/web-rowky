@@ -38,12 +38,4 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="large-6 columns">
-        <button class="button left" v-class="disabled: !hasPreviousPage" v-link="?page={{ previousPageNo }}">Previous</button>
-    </div>
-    <div class="large-6 columns ">
-        <button class="button right" v-class="disabled: !hasNextPage" v-link="?page={{ nextPageNo }}">Next</button>
-    </div>
-</div>
-
+<pagination pagination="{{ pagination }}" key-name="page"></pagination>

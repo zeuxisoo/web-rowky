@@ -42,36 +42,6 @@ module.exports = {
         });
     },
 
-    computed: {
-        previousPageNo: function() {
-            var page_no = this.pagination.current_page - 1;
-
-            if (page_no === 0) {
-                page_no = 1;
-            }
-
-            return page_no;
-        },
-
-        nextPageNo: function() {
-            var page_no = this.pagination.current_page + 1;
-
-            if (page_no > this.pagination.total_pages) {
-                page_no = this.pagination.total_pages;
-            }
-
-            return page_no;
-        },
-
-        hasPreviousPage: function() {
-            return this.pagination.current_page - 1 > 0;
-        },
-
-        hasNextPage: function() {
-            return this.pagination.current_page + 1 <= this.pagination.total_pages;
-        }
-    },
-
     methods: {
         onChangeCategory: function(value) {
             this.$route.router.go('/c/' + value);
@@ -79,6 +49,6 @@ module.exports = {
     },
 
     components: {
-        'select-categories': require('../../components/select-categories')
+        'pagination': require('../../components/pagination')
     }
 }
