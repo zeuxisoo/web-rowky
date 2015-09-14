@@ -98,6 +98,7 @@ Elixir(function(mix) {
             'bower_components/jquery/dist/jquery.js',
             'bower_components/modernizr/modernizr.js',
             'bower_components/foundation/js/foundation.js',
+            'bower_components/responsive-tables/responsive-tables.js',
             'bower_components/marked/lib/marked.js',
             'bower_components/toastr/toastr.js',
             'public/assets/app.js',
@@ -106,6 +107,7 @@ Elixir(function(mix) {
         .styles([
             'bower_components/foundation/css/normalize.css',
             'bower_components/foundation/css/foundation.css',
+            'bower_components/responsive-tables/responsive-tables.css',
             'bower_components/font-awesome/css/font-awesome.css',
             'bower_components/github-markdown-css/github-markdown.css',
             'bower_components/toastr/toastr.css',
