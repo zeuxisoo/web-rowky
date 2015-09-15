@@ -14,22 +14,27 @@ var Router = new VueRouter({
 
 Router.map({
     '/': {
+        name     : 'home',
         component: require('./views/home')
     },
 
     '/inform': {
+        name     : 'inform.create',
         component: require('./views/inform/create')
     },
 
     '/c/:category': {
+        name     : 'category.show',
         component: require('./views/category')
     },
 
     '/i/:id': {
+        name     : 'inform.show',
         component: require('./views/inform/show')
     },
 
     '*': {
+        name     : 'any',
         component: require('./views/not-found')
     }
 });

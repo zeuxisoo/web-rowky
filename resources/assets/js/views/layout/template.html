@@ -2,7 +2,7 @@
     <nav class="top-bar" data-topbar role="navigation">
         <ul class="title-area">
             <li class="name">
-                <h1><a v-link="/">Rowky</a></h1>
+                <h1><a v-link="{ name: 'home' }">Rowky</a></h1>
             </li>
             <li class="toggle-topbar menu-icon"><a href="javascript:void(0)"><span>Menu</span></a></li>
         </ul>
@@ -10,10 +10,10 @@
         <section class="top-bar-section">
             <ul class="left">
                 <li>
-                    <a v-link="/">Home</a>
+                    <a v-link="{ name: 'home' }">Home</a>
                 </li>
                 <li>
-                    <a v-link="/inform">Inform</a>
+                    <a v-link="{ name: 'inform.create' }">Inform</a>
                 </li>
             </ul>
 
