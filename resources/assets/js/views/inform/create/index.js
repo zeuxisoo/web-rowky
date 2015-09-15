@@ -54,7 +54,12 @@ module.exports = {
                 if (inform && inform.job_title) {
                     $("button[type=reset]").trigger('click');
 
-                    this.$helpers.message.success('Inform Created');
+                    this.$route.router.go({
+                        name  : 'inform.show',
+                        params: {
+                            id: inform.id
+                        }
+                    });
                 }
             }).error(this.shakeError);
         },
