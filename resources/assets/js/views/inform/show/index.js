@@ -22,8 +22,6 @@ module.exports = {
     },
 
     compiled: function() {
-        console.log(this.$route.params.id);
-
         this.$api.inform.show({
             id: this.$route.params.id
         }, function(response) {
