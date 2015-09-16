@@ -15,7 +15,7 @@ class InformRepository extends ApiRepository {
     }
 
     public function all() {
-        return $this->inform->paginate(1);
+        return $this->inform->orderBy('created_at', 'desc')->paginate(1);
     }
 
     public function find($id) {
