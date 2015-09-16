@@ -10,6 +10,9 @@ vendor:
 npm:
 	@npm install
 
+bower:
+	@./node_modules/.bin/bower install
+
 assets:
 	@./node_modules/.bin/gulp
 
