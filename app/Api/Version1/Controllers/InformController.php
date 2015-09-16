@@ -1,6 +1,7 @@
 <?php
 namespace App\Api\Version1\Controllers;
 
+use Illuminate\Http\Request;
 use App\Api\Version1\Bases\ApiController;
 use App\Api\Version1\Requests\InformRequest;
 use App\Api\Version1\Repositories\InformRepository;
@@ -21,8 +22,13 @@ class InformController extends ApiController {
         return $this->response->item($inform, new InformTransformer);
     }
 
-    public function all() {
-        $informs = $this->informRepository->all();
+    public function all(Request $request) {
+        if ($request->has('category') === false) {
+            $informs = $this->informRepository->all();
+        }else{
+            $category = $request->input('category');
+            $informs  = $this->informRepository->allRelatedCategory($category);
+        }
 
         return $this->response->paginator($informs, new InformTransformer);
     }

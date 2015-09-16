@@ -22,4 +22,8 @@ class InformRepository extends ApiRepository {
         return $this->inform->find($id);
     }
 
+    public function allRelatedCategory($category) {
+        return $this->inform->where('category', $category)->orderBy('created_at', 'desc')->paginate(1);
+    }
+
 }
