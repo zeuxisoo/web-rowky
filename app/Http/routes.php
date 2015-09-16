@@ -25,6 +25,7 @@ $api->version('v1', function($api) {
     });
 
     $api->group(['namespace' => 'App\Api\Version1\Controllers', 'prefix' => 'category'], function ($api) {
-        $api->get('all', ['as' => 'api.category.all', 'uses' => 'CategoryController@all']);
+        $api->get('all',         ['as' => 'api.category.all',  'uses' => 'CategoryController@all']);
+        $api->get('show/{slug}', ['as' => 'api.category.show', 'uses' => 'CategoryController@show']);
     });
 });

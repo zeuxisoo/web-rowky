@@ -19,6 +19,10 @@ class CategoryController extends ApiController {
         return $this->response->collection($catgories, new CategoryTransformer);
     }
 
+    public function show($slug) {
+        $category = $this->categoryRepository->firstBySlug($slug);
 
+        return $this->response->item($category, new CategoryTransformer);
+    }
 
 }

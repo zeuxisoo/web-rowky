@@ -14,4 +14,8 @@ class CategoryRepository extends ApiRepository {
         return $this->category->all();
     }
 
+    public function firstBySlug($slug) {
+        return $this->category->where('slug', $slug)->first();
+    }
+
 }

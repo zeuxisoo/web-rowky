@@ -8,7 +8,15 @@ CategoryApi.prototype.all = function(data, success) {
         data,
         success
     );
-}
+};
+
+CategoryApi.prototype.show = function(data, success) {
+    return this.app.$http.get(
+        this.app.$helpers.api.url('/category/show/:slug'),
+        data,
+        success
+    );
+};
 
 module.exports = function(app) {
     return new CategoryApi(app);
