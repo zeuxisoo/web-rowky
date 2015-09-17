@@ -53,6 +53,11 @@ Object.defineProperties(Vue.prototype, {
         get: function() {
             return require('./api')(this);
         }
+    },
+    $settings: {
+        get: function() {
+            return require('./settings');
+        }
     }
 });
 

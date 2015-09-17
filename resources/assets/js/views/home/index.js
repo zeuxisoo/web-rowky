@@ -1,6 +1,10 @@
 module.exports = {
     template: require('./template.html'),
 
+    mixins: [
+        require('../../mixins')
+    ],
+
     data: function() {
         return {
             categories : [],
@@ -32,6 +36,8 @@ module.exports = {
 
                 this.informs = informs;
                 this.pagination = pagination;
+
+                this.setTitle();
             });
         }
     },

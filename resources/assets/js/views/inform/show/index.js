@@ -3,6 +3,10 @@ require('./style.scss');
 module.exports = {
     template: require('./template.html'),
 
+    mixins: [
+        require('../../../mixins')
+    ],
+
     data: function() {
         return {
             inform: {
@@ -26,6 +30,8 @@ module.exports = {
             id: this.$route.params.id
         }, function(response) {
             this.inform = response.data;
+
+            this.setTitle(this.inform.job_title + ' - ' + this.inform.company_name);
         });
     }
 }

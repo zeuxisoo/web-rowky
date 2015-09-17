@@ -1,6 +1,10 @@
 module.exports = {
     template: require('./template.html'),
 
+    mixins: [
+        require('../../../mixins')
+    ],
+
     data: function() {
         return {
             error : false,
@@ -17,6 +21,10 @@ module.exports = {
                 contactEmail: '',
             }
         };
+    },
+
+    compiled: function() {
+        this.setTitle('Create inform');
     },
 
     methods: {

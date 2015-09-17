@@ -1,6 +1,10 @@
 module.exports = {
     template: require('./template.html'),
 
+    mixins: [
+        require('../../mixins')
+    ],
+
     data: function() {
         return {
             category  : {},
@@ -29,6 +33,8 @@ module.exports = {
                 slug: category
             }, function(response) {
                 this.category = response.data;
+
+                this.setTitle(this.category.name);
 
                 this.$api.inform.all({
                     page    : page_no,
