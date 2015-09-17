@@ -42,6 +42,12 @@ module.exports = {
         });
     },
 
+    computed: {
+        hasInforms: function() {
+            return this.informs.length > 0;
+        }
+    },
+
     methods: {
         onChangeCategory: function(value) {
             this.$route.router.go('/c/' + value);
