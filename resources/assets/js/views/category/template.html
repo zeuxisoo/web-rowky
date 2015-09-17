@@ -1,33 +1,35 @@
-<div class="panel">
-    <div class="row">
-        <div class="large-12 column">
-            <h3>{{ category.name }}</h3>
-            <hr>
-            <table width="100%" class="responsive" v-if="hasInforms">
-                <thead>
-                    <tr>
-                        <th width="40%">Company Name</th>
-                        <th width="25%">Job Title</th>
-                        <th width="15%">Salary</th>
-                        <th width="15%">Post At</th>
-                        <th width="5%">Action</th>
-                    </tr>
-                </thead>
-                <tbody v-repeat="informs">
-                    <td>{{ company_name }}</td>
-                    <td>{{ job_title }}</td>
-                    <td>{{ min_salary }} ~ {{ max_salary }}</td>
-                    <td>{{ created_at }}</td>
-                    <td width="5%">
-                        <a v-link="{ name: 'inform.show', params: { id: id } }">Look</a>
-                    </td>
-                </tbody>
-            </table>
-            <div class="panel callout" v-if="!hasInforms">
-                No informs :(
+<div v-transition="bounce">
+    <div class="panel">
+        <div class="row">
+            <div class="large-12 column">
+                <h3>{{ category.name }}</h3>
+                <hr>
+                <table width="100%" class="responsive" v-if="hasInforms">
+                    <thead>
+                        <tr>
+                            <th width="40%">Company Name</th>
+                            <th width="25%">Job Title</th>
+                            <th width="15%">Salary</th>
+                            <th width="15%">Post At</th>
+                            <th width="5%">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody v-repeat="informs" v-transition="fade">
+                        <td>{{ company_name }}</td>
+                        <td>{{ job_title }}</td>
+                        <td>{{ min_salary }} ~ {{ max_salary }}</td>
+                        <td>{{ created_at }}</td>
+                        <td width="5%">
+                            <a v-link="{ name: 'inform.show', params: { id: id } }">Look</a>
+                        </td>
+                    </tbody>
+                </table>
+                <div class="panel callout" v-if="!hasInforms">
+                    No informs :(
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<pagination pagination="{{ pagination }}" key-name="page" v-if="hasInforms"></pagination>
+    <pagination pagination="{{ pagination }}" key-name="page" v-if="hasInforms"></pagination>
+</div>

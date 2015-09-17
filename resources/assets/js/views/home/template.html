@@ -1,41 +1,43 @@
-<div class="panel">
-    <h3>Job Category</h3>
-    <div class="row">
-        <div class="large-12 columns">
-            <a v-repeat="categories" v-link="{ name: 'category.show', params: { category: slug } }" class="filter">
-                <span class="label">{{ name }}</span>
-            </a>
+<div v-transition="bounce">
+    <div class="panel">
+        <h3>Job Category</h3>
+        <div class="row">
+            <div class="large-12 columns">
+                <a v-repeat="categories" v-link="{ name: 'category.show', params: { category: slug } }" v-transition="fade">
+                    <span class="label">{{ name }}</span>
+                </a>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="panel">
-    <h3>Job List</h3>
-    <div class="row">
-        <div class="large-12 columns">
-            <table width="100%" class="responsive">
-                <thead>
-                    <tr>
-                        <th width="40%">Company Name</th>
-                        <th width="25%">Job Title</th>
-                        <th width="15%">Salary</th>
-                        <th width="15%">Post At</th>
-                        <th width="5%">Action</th>
-                    </tr>
-                </thead>
-                <tbody v-repeat="informs">
-                        <td>{{ company_name }}</td>
-                        <td>{{ job_title }}</td>
-                        <td>{{ min_salary }} ~ {{ max_salary }}</td>
-                        <td>{{ created_at }}</td>
-                        <th width="5%">
-                            <a v-link="{ name: 'inform.show', params: { id: id } }">Look</a>
-                        </th>
-                    </tr>
-                </tbody>
-            </table>
+    <div class="panel">
+        <h3>Job List</h3>
+        <div class="row">
+            <div class="large-12 columns">
+                <table width="100%" class="responsive">
+                    <thead>
+                        <tr>
+                            <th width="40%">Company Name</th>
+                            <th width="25%">Job Title</th>
+                            <th width="15%">Salary</th>
+                            <th width="15%">Post At</th>
+                            <th width="5%">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody v-repeat="informs" v-transition="fade">
+                            <td>{{ company_name }}</td>
+                            <td>{{ job_title }}</td>
+                            <td>{{ min_salary }} ~ {{ max_salary }}</td>
+                            <td>{{ created_at }}</td>
+                            <th width="5%">
+                                <a v-link="{ name: 'inform.show', params: { id: id } }">Look</a>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
 
-<pagination pagination="{{ pagination }}" key-name="page" v-if="hasInforms"></pagination>
+    <pagination pagination="{{ pagination }}" key-name="page" v-if="hasInforms"></pagination>
+</div>

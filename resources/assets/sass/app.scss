@@ -7,3 +7,19 @@
         }
     }
 }
+
+.fade-transition {
+    transition: all .2s ease-in-out;
+    opacity: 1;
+}
+
+.fade-enter, .fade-leave {
+    opacity: 0;
+}
+
+.bounce-enter {
+    animation: bounceIn .2s;
+}
+.bounce-leave {
+    animation: bounceOut .2s;
+}

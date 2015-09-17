@@ -1,49 +1,51 @@
-<div class="panel">
-    <div class="row">
-        <div class="large-12 column">
-            <h3>{{ inform.job_title }} @ {{ inform.company_name }}</h3>
-            <hr>
-            <div class="text-info text-small top-bottom-10px location">
-                <i class="fa fa-map-marker"></i> {{ inform.location }}
-            </div>
-            <div class="text-muted text-small top-bottom-10px" v-if="inform.website_url">
-                <i class="fa fa-link"></i>
-                <a href="{{ inform.website_url }}" target="_blank">{{ inform.website_url }}</a>
-            </div>
-            <div class="row">
-                <div class="large-6 column">
-                    <div class="text-muted text-small">
-                        <i class="fa fa-calendar"></i> {{ inform.created_at }}
-                    </div>
+<div v-transition="bounce">
+    <div class="panel">
+        <div class="row">
+            <div class="large-12 column">
+                <h3>{{ inform.job_title }} @ {{ inform.company_name }}</h3>
+                <hr>
+                <div class="text-info text-small top-bottom-10px location">
+                    <i class="fa fa-map-marker"></i> {{ inform.location }}
                 </div>
-                <div class="large-6 column">
-                    <div class="text-muted text-small pull-right">
-                        <span class="secondary label">HKD {{ inform.min_salary }}</span>
-                        ~
-                        <span class="success label">HKD {{ inform.max_salary }}</span>
+                <div class="text-muted text-small top-bottom-10px" v-if="inform.website_url">
+                    <i class="fa fa-link"></i>
+                    <a href="{{ inform.website_url }}" target="_blank">{{ inform.website_url }}</a>
+                </div>
+                <div class="row">
+                    <div class="large-6 column">
+                        <div class="text-muted text-small">
+                            <i class="fa fa-calendar"></i> {{ inform.created_at }}
+                        </div>
+                    </div>
+                    <div class="large-6 column">
+                        <div class="text-muted text-small pull-right">
+                            <span class="secondary label">HKD {{ inform.min_salary }}</span>
+                            ~
+                            <span class="success label">HKD {{ inform.max_salary }}</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="panel">
-    <div class="row">
-        <div class="large-12 column">
-            <div class="markdown-body">
-                {{{ inform.description | marked }}}
+    <div class="panel">
+        <div class="row">
+            <div class="large-12 column">
+                <div class="markdown-body">
+                    {{{ inform.description | marked }}}
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="panel">
-    <div class="row">
-        <div class="large column">
-            <h3>How to apply</h3>
-            <hr>
-            {{{ inform.how_to_apply | email }}}
+    <div class="panel">
+        <div class="row">
+            <div class="large column">
+                <h3>How to apply</h3>
+                <hr>
+                {{{ inform.how_to_apply | email }}}
+            </div>
         </div>
     </div>
 </div>
