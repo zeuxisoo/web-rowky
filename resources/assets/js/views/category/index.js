@@ -38,7 +38,7 @@ module.exports = {
 
                 this.$api.inform.all({
                     page    : page_no,
-                    category: this.category.id
+                    category: category.id
                 }, function(response) {
                     var informs    = response.data,
                         pagination = response.meta.pagination;
