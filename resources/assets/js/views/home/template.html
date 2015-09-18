@@ -1,4 +1,10 @@
-<div v-transition="bounce">
+<div class="row" v-if="$loadingRouteData">
+    <div class="small-2 large-centered columns">
+        <img src="/build/img/squares.gif">
+    </div>
+</div>
+
+<div v-transition="bounce" v-if="!$loadingRouteData">
     <div class="panel">
         <h3>Job Category</h3>
         <div class="row">

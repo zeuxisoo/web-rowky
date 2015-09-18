@@ -34,10 +34,12 @@ module.exports = {
                 var informs    = response.data,
                     pagination = response.meta.pagination;
 
-                this.informs = informs;
-                this.pagination = pagination;
-
                 this.setTitle();
+
+                transition.next({
+                    informs   : informs,
+                    pagination: pagination
+                });
             });
         }
     },

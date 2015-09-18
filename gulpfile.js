@@ -120,6 +120,10 @@ Elixir(function(mix) {
             'public/assets/bundle.js',
         ])
         .copy(
+            'resources/assets/img',
+            'public/build/img'
+        )
+        .copy(
             'bower_components/font-awesome/fonts',
             'public/build/fonts'
         )
