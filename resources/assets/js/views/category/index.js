@@ -32,9 +32,9 @@ module.exports = {
             this.$api.category.show({
                 slug: category
             }, function(response) {
-                this.category = response.data;
+                var category = response.data;
 
-                this.setTitle(this.category.name);
+                this.setTitle(category.name);
 
                 this.$api.inform.all({
                     page    : page_no,
@@ -43,8 +43,11 @@ module.exports = {
                     var informs    = response.data,
                         pagination = response.meta.pagination;
 
-                    this.informs = informs;
-                    this.pagination = pagination;
+                    transition.next({
+                        category  : category,
+                        informs   : informs,
+                        pagination: pagination
+                    });
                 });
             });
         }
