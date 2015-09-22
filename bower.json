@@ -11,8 +11,8 @@
     "marked": "~0.3.5",
     "responsive-tables": "https://github.com/zurb/responsive-tables.git",
     "toastr": "~2.1.2",
-    "vue": "~0.12.11",
-    "vue-resource": "~0.1.14",
+    "vue": "~0.12.15",
+    "vue-resource": "~0.1.16",
     "vue-router": "~0.6.0"
   }
 }
